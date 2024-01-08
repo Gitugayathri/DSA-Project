@@ -3,7 +3,9 @@ from flask import Flask, render_template, request
 import pickle
 import pandas as pd
 import numpy as np
+
 app = Flask(__name__)
+
 # Load the trained model
 model_filename = 'election_model.pkl'
 with open(model_filename, 'rb') as model_file:
@@ -24,6 +26,7 @@ with open(scaler_filename, 'rb') as scaler_file:
 @app.route('/')
 def home():
     return render_template('index.html')
+    
 # Define a route for prediction
 @app.route('/predict', methods=['POST'])
 def predict():
