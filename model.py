@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 # Load the dataset
-file_path = 'D:/Project_Election/elct_data.csv'
+file_path = 'D:/Project_Election/LS_2.0.csv.csv'
 election_data = pd.read_csv(file_path)
 
 # Replace '\n' in column names with spaces
