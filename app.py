@@ -4,6 +4,21 @@ import pickle
 import pandas as pd
 import numpy as np
 app = Flask(__name__)
+# Load the trained model
+model_filename = 'election_model.pkl'
+with open(model_filename, 'rb') as model_file:
+    clf = pickle.load(model_file)
+
+# Load the label encoder
+encoder_filename = 'label_encoder.pkl'
+with open(encoder_filename, 'rb') as encoder_file:
+    label_encoder = pickle.load(encoder_file)
+
+# Load the scaler
+scaler_filename = 'scaler.pkl'
+with open(scaler_filename, 'rb') as scaler_file:
+    scaler = pickle.load(scaler_file)
+
 
 # Define a route for the home page
 @app.route('/')
